@@ -10,8 +10,6 @@ import {
     Event,
     School,
 } from "@mui/icons-material";
-import { Users } from '../../dummyData'
-import CloseFriend from "../closeFriend/CloseFriend";
 import { Box, Button, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 
 
@@ -112,13 +110,6 @@ export default function Sidebar() {
 
                 </Button>
                 <Divider className="sidebarHr" />
-                <List className="sidebarFriendList">
-                    {
-                        Users.map(u => (
-                            <CloseFriend key={u.id} user={u} />
-                        ))
-                    }
-                </List>
             </Box>
         </Box>
     );

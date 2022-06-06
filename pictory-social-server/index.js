@@ -65,13 +65,8 @@ const io = require('socket.io')(server,{
 io.on('connection', (socket)=>{
   console.log("Connected")
     
-  socket.on("comment-room", (room)=>{
-    socket.join(room)
-    console.log(room + "Joined the room")
-  })
 
   socket.on("comment", (comment)=>{
-    console.log(comment)
     async function postCommnet() {
 
 try{
