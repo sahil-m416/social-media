@@ -1,0 +1,12 @@
+.feed {
+    flex: 5.5;
+}
+
+.feedWrapper {
+    padding: 20px;
+}
+
+.allPosts {
+    display: flex;
+    flex-direction: column-reverse;
+}
