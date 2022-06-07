@@ -1,0 +1,16 @@
+1 - for Post-Scalability
+
+pagination -- 
+10 posts each time
+sorted desc order by createdAt
+
+
+
+
+For nested comments and scalability 
+
+comment model - sub-collection
+pagination for comments
+
+
+repositoriessss for AJAX requests

@@ -69,9 +69,11 @@ password - client
 ## What's Next ?
 
 
-- Real-time like and post update without reloading
 - Email verification and forgot password functionality
-- Profile updates like profile photo
+- Video Uploading
+- Add New Friends
+- Integrating Chat app with Social Media
+- Profile updates like profile photo, Username change, password change
 - Minor bug fixes
 
 
