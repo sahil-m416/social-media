@@ -8,11 +8,20 @@ router.route("/register").get(async function(req, res){
 
 }).post(async function(req, res){
     try {
-           const existingUser = await User.findOne({username: req.body.username})
+        const existingUser = await User.findOne({username: req.body.username})
         if (existingUser){
             res.status(401).json("Username already in use")
             return;
         }
+
+        const existingEmail = await User.findOne({email: req.body.email})
+        if(existingEmail)
+        {
+            res.status(402).json("Email already registered")
+            return;
+        }
+
+
         const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
     const newUser = await new User({

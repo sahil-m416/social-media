@@ -132,6 +132,8 @@ export default function Register() {
             } catch (error) {
                 if (error.response.status === 401)
                     alert("Username already in use")
+                if (error.response.status === 402)
+                    alert("Email already registered")
             }
 
         }
