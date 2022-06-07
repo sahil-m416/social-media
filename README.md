@@ -66,6 +66,14 @@ password - client
 - Fullscreen mode
 - Cross platform
 
+## What's Next ?
+
+
+- Real-time like and post update
+- Email verification and forgot password functionality
+- Profile updates like profile photo
+- Minor bug fixes
+
 
 ## Learn More
 
