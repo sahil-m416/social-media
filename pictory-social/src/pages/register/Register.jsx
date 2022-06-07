@@ -130,7 +130,8 @@ export default function Register() {
                 await axios.post("/auth/register", user);
                 navigate("/")
             } catch (error) {
-                console.log(error)
+                if (error.response.status === 401)
+                    alert("Username already in use")
             }
 
         }

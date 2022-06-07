@@ -8,6 +8,11 @@ router.route("/register").get(async function(req, res){
 
 }).post(async function(req, res){
     try {
+           const existingUser = await User.findOne({username: req.body.username})
+        if (existingUser){
+            res.status(401).json("Username already in use")
+            return;
+        }
         const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
     const newUser = await new User({
@@ -29,8 +34,11 @@ router.route("/register").get(async function(req, res){
 router.route("/login").get(function(req, res) {res.end("login")}).post(async function(req, res) {
     try {
         const user = await User.findOne({email: req.body.email});
-        !user && res.status(404).send("User not found")
-        
+         if(!user)
+        {
+            res.status(404).send("User not found")  
+            return;
+        }
         const validPassword = await bcrypt.compare(req.body.password, user.password)
         !validPassword && res.status(400).json("password is incorrect")
         res.status(200).json(user)

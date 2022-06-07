@@ -8,6 +8,8 @@ export const loginCall = async (userCredentials, dispatch) => {
         dispatch({type:"LOGIN_SUCCESS", payload : res.data})
     }
     catch (err) {
+         if(err.response.status=== 404)
+        alert("Bad Login Credentials")
         dispatch({type:"LOGIN_FAILURE", payload: err.message})
     }
 }
