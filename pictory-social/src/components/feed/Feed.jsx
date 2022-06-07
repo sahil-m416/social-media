@@ -75,7 +75,6 @@ export default function Feed() {
                             ))}
                         </Box>
                         <Loading />
-                        <Loading />
                     </>
                 }
             </Box>

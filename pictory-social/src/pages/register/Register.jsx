@@ -4,8 +4,9 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { makeStyles } from "@mui/styles"
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { registerCall } from '../../apiCalls'
+
 // // Custom Styling starts here
 const useStyles = makeStyles({
     root: {
@@ -61,7 +62,6 @@ const useStyles = makeStyles({
         borderRadius: "10px",
         display: "flex",
         flexDirection: "column",
-        display: "flex",
         justifyContent: "space-between",
     },
 
@@ -127,13 +127,18 @@ export default function Register() {
                 password: password.current.value
             }
             try {
-                await axios.post("/auth/register", user);
+                const res = await registerCall(user)
+                if (res.response.status === 401) {
+                    alert("Username already in use")
+                    return;
+                }
+                if (res.response.status === 402) {
+                    alert("Email already registered")
+                    return;
+                }
                 navigate("/")
             } catch (error) {
-                if (error.response.status === 401)
-                    alert("Username already in use")
-                if (error.response.status === 402)
-                    alert("Email already registered")
+                console.log(error)
             }
 
         }

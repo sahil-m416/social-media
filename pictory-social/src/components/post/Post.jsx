@@ -51,7 +51,7 @@ export default function Post({ post, handleComment, comments }) {
         setIsLiked(!isLiked)
     }
     const submitComment = () => {
-        if (comment === "" || comment == " ") {
+        if (comment === "" || comment === " ") {
             alert("Cannot post Empty comment")
             return;
         }

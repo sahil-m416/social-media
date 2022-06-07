@@ -23,8 +23,8 @@ export default function Sidebar() {
                 <List className="sidebarList">
 
                     <ListItem disablePadding>
-                        <ListItemText disablePadding className="sidebarListItem">
-                            <ListItemIcon disablePadding>
+                        <ListItemText className="sidebarListItem">
+                            <ListItemIcon>
                                 <RssFeed className="sidebarIcon" />
                             </ListItemIcon>
                             <Typography component="span" variant="span" className="sidebarListItemText">Feed</Typography>
