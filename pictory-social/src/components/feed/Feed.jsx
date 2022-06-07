@@ -17,7 +17,6 @@ export default function Feed() {
 
     // // Fetch comments and set setPostComments accordingly
 
-
     useEffect(() => {
         socket.off("newCommentRecieved").on("newCommentRecieved", comment => {
             console.log("THis is called")

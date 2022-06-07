@@ -69,7 +69,7 @@ password - client
 ## What's Next ?
 
 
-- Real-time like and post update
+- Real-time like and post update without reloading
 - Email verification and forgot password functionality
 - Profile updates like profile photo
 - Minor bug fixes
