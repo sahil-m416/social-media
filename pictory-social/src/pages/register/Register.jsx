@@ -117,9 +117,8 @@ export default function Register() {
     const confirmPassword = useRef()
     const handleRegistration = async (e) => {
         e.preventDefault()
-        console.log("REgis")
         if (confirmPassword.current.value !== password.current.value) {
-            confirmPassword.current.setCustomValidity("Password Do not match")
+            alert("Passwords Do not Match")
         } else {
             const user = {
                 username: username.current.value,

@@ -1,11 +1,11 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button'
 import { makeStyles } from '@mui/styles'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { loginCall } from '../../apiCalls'
 import { AuthContext } from "./../../context/AuthContext";
 
@@ -30,6 +30,7 @@ const useStyles = makeStyles({
         alignItems: "center",
         justifyContent: "center",
     },
+
     loginWrapper: {
         width: "70%",
         height: "70%",
@@ -106,6 +107,60 @@ const useStyles = makeStyles({
         fontWeight: "500",
         cursor: "pointer"
     },
+
+
+
+    // FOR DARK MODE
+
+
+
+    rootDark: {
+        "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgba(107, 45, 221, 1)",
+            borderRadius: "10px",
+            color: "white !important",
+        },
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgba(107, 45, 221, 1)",
+            borderRadius: "10px",
+            color: "white !important",
+        },
+        "input": {
+            color: "white !important"
+        }
+    },
+
+
+    loginDark: {
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "#101010",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
+    loginDescDark: {
+        fontSize: "24px",
+        color: "white",
+    },
+
+
+    loginBoxDark: {
+        height: "300px",
+        padding: "20px",
+        backgroundColor: "black",
+        borderRadius: "10px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        color: "white"
+    },
+
+    input: {
+        color: "white !important",
+    }
+
 })
 
 
@@ -114,7 +169,8 @@ export default function Login() {
     let navigate = useNavigate()
     const email = useRef()
     const password = useRef()
-    const { user, isFetching, error, dispatch } = useContext(AuthContext)
+    const { user, isFetching, dispatch } = useContext(AuthContext)
+    const [darkMode, setDarkMode] = useState(true)
 
     console.log(user)
     const handleFormSubmit = (e) => {
@@ -131,7 +187,7 @@ export default function Login() {
 
 
     return (
-        <Box className={classes.login}>
+        <Box className={darkMode ? classes.loginDark : classes.login}>
             <Box className={classes.loginWrapper}>
                 <Box className={classes.loginLeft}>
 
@@ -145,7 +201,7 @@ export default function Login() {
 
                     <Typography
                         variant="span"
-                        className="loginDesc"
+                        className={darkMode ? classes.loginDescDark : classes.loginDesc}
                         component="div"
                     >
                         Connect with your friends. A personalised Social Media.
@@ -153,10 +209,30 @@ export default function Login() {
 
                 </Box>
                 <Box className={classes.loginRight}>
-                    <form onSubmit={handleFormSubmit} className={classes.loginBox}>
+                    <form onSubmit={handleFormSubmit} className={darkMode ? classes.loginBoxDark : classes.loginBox}>
 
-                        <TextField variant="outlined" label="Email" className={classes.root} required inputRef={email} />
-                        <TextField variant="outlined" type="password" label="Password" className={classes.root} required inputRef={password} />
+                        <TextField
+                            variant="outlined"
+                            InputProps={{
+                                className: classes.input
+                            }}
+                            label="Email"
+                            className={darkMode ? classes.rootDark : classes.root}
+                            inputRef={email}
+                            required
+                        />
+
+                        <TextField
+                            InputProps={{
+                                className: classes.input
+                            }}
+                            variant="outlined"
+                            type="password"
+                            label="Password"
+                            className={darkMode ? classes.rootDark : classes.root}
+                            inputRef={password}
+                            required
+                        />
 
                         <Button disabled={isFetching} type="submit" variant="contained" className={classes.loginButton}>{isFetching ? <CircularProgress /> : "Log In"}</Button>
                         <Typography className={classes.loginForgot}>Forgot Password</Typography>
