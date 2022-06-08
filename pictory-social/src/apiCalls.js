@@ -12,6 +12,8 @@ export const loginCall = async (userCredentials, dispatch) => {
     catch (err) {
          if(err.response.status=== 404)
         alert("Bad Login Credentials")
+        if(err.response.status === 400)
+        alert("Bad Login Credentials")
         dispatch({type:"LOGIN_FAILURE", payload: err.message})
     }
 }
@@ -24,4 +26,9 @@ export const registerCall = async(user) => {
     } catch (error) {
         return error
     }
+}
+
+
+export const logoutCall = () =>{
+    localStorage.setItem("user", null)
 }

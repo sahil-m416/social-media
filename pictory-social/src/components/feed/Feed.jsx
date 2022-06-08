@@ -24,6 +24,16 @@ export default function Feed() {
         })
     }, [])
 
+
+    useEffect(() => {
+        socket.off("newPost").on("newPost", newPost => {
+            const toLoadPost = window.confirm("New Post available, Want to load ?")
+            if (toLoadPost) {
+                setPosts([...posts, newPost])
+            }
+        })
+    }, [posts])
+
     const updateComments = (comment) => {
         const postId = comment.postId
         if (postComments[postId]) {
@@ -34,8 +44,6 @@ export default function Feed() {
         setPostComments({ ...postComments })
     }
 
-
-
     const handleComment = (postId, comment) => {
         // Todo Send to database here...
         socket.emit("comment", {
@@ -45,9 +53,7 @@ export default function Feed() {
         })
     }
 
-
     useEffect(() => {
-
         setTimeout(() => {
             setLoading(false)
         }, 4000);

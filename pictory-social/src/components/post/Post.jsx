@@ -26,7 +26,7 @@ export default function Post({ post, handleComment, comments }) {
         }
         fetchComments(post._id)
 
-    }, [])
+    }, [post._id])
 
     useEffect(() => {
         setIsLiked(post.likes.includes(currentUser._id))

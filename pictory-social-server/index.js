@@ -61,34 +61,37 @@ const io = require('socket.io')(server,{
   }
 })
 
-
 io.on('connection', (socket)=>{
   console.log("Connected")
     
 
   socket.on("comment", (comment)=>{
-    async function postCommnet() {
+    async function postComment() {
 
-try{
-        const post = await Post.findById(comment.postId)
-        const toSend = {
-            name: comment.user,
-            comment: comment.comment,
-            postId: comment.postId
-        }
-        await post.updateOne({$push: {comments : toSend}})
-    } catch (error) {
-        console.log(error)
-    }
+    try{
+          const post = await Post.findById(comment.postId)
+          const toSend = {
+              name: comment.user,
+              comment: comment.comment,
+              postId: comment.postId
+          }
+          await post.updateOne({$push: {comments : toSend}})
+      } catch (error) {
+          console.log(error)
+      }
   }
-    postCommnet()
-      
-    var post = comment
-    socket.emit("comment", post)
+
+    postComment()
         io.emit("newCommentRecieved", comment)
-        // console.log(comment)
     })
 
+    socket.on("post", async (newPost) =>{
+      const post = await new Post({
+        userId: newPost.userId,
+        desc: newPost.desc,
+      })
+      io.emit("newPost", post)
+    })
 
   socket.on("disconnect", ()=>{
     console.log("Client disconnected")

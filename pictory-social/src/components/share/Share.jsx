@@ -2,6 +2,7 @@ import { PermMedia, Label, Room, EmojiEmotions } from '@mui/icons-material'
 import { Box, Divider, Typography, Button } from '@mui/material'
 import React, { useContext, useRef, useState } from 'react'
 import './share.css'
+import { socket } from '../socket';
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 
@@ -32,9 +33,10 @@ export default function Share() {
         }
         try {
             await axios.post("/post", newPost)
-            if (window.confirm("New post available, want to reload the page ?")) {
-                window.location.reload()
-            }
+            socket.emit("post", newPost)
+            // if (window.confirm("New post available, want to reload the page ?")) {
+            //     window.location.reload()
+            // }
         } catch (error) {
             console.log(error)
         }

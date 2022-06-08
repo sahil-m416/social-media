@@ -49,7 +49,11 @@ router.route("/login").get(function(req, res) {res.end("login")}).post(async fun
             return;
         }
         const validPassword = await bcrypt.compare(req.body.password, user.password)
-        !validPassword && res.status(400).json("password is incorrect")
+        if(!validPassword)
+        {
+            res.status(400).json("Invalid User credentials")
+            return;
+        }
         res.status(200).json(user)
     } catch (error) {
         console.log(error)

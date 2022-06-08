@@ -1,14 +1,30 @@
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext'
 import React, { useContext } from 'react'
 import './SearchComp.css'
 import { ImageListItem } from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
+
 export default function SearchComp() {
-    const { user } = useContext(AuthContext)
+
+
+
+    const { user, dispatch } = useContext(AuthContext)
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const navigate = useNavigate()
+
+
+    function handleLogout() {
+        const logoutConfirm = window.confirm('Are you sure you want to log out ?')
+        if (logoutConfirm) {
+            dispatch({ type: "LOGOUT_SUCCESS" })
+            navigate("/")
+        }
+    }
+
     return (
         <Box className="topbarContainer">
             <Box className="topbarLeft">
@@ -47,6 +63,12 @@ export default function SearchComp() {
                         <Typography className="topbarIconBadge">1</Typography>
                     </Box>
                 </Box>
+                <LogoutIcon
+                    sx={{
+                        cursor: "pointer"
+                    }}
+                    onClick={handleLogout}
+                />
                 <ImageListItem component="img" src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" className="topbarImg" />
             </Box>
         </Box>
