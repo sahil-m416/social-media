@@ -66,10 +66,11 @@ password - client
 - Fullscreen mode
 - Cross platform
 
-## What's Next ?
+# What's Next ?
 
 
 - Email verification and forgot password functionality
+- 24 hour Story Feature
 - Video Uploading
 - Add New Friends
 - Integrating Chat app with Social Media
