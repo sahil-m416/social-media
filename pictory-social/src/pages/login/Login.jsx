@@ -157,9 +157,6 @@ const useStyles = makeStyles({
         color: "white"
     },
 
-    input: {
-        color: "white !important",
-    }
 
 })
 
@@ -170,11 +167,10 @@ export default function Login() {
     const email = useRef()
     const password = useRef()
     const { user, isFetching, dispatch } = useContext(AuthContext)
-    const [darkMode, setDarkMode] = useState(true)
+    const [darkMode, setDarkMode] = useState(false)
 
     console.log(user)
     const handleFormSubmit = (e) => {
-
         e.preventDefault()
         loginCall({ email: email.current.value, password: password.current.value }, dispatch)
     }
@@ -213,9 +209,9 @@ export default function Login() {
 
                         <TextField
                             variant="outlined"
-                            InputProps={{
-                                className: classes.input
-                            }}
+                            // InputProps={{
+                            //     className: classes.input
+                            // }}
                             label="Email"
                             className={darkMode ? classes.rootDark : classes.root}
                             inputRef={email}
@@ -223,9 +219,9 @@ export default function Login() {
                         />
 
                         <TextField
-                            InputProps={{
-                                className: classes.input
-                            }}
+                            // InputProps={{
+                            //     className: classes.input
+                            // }}
                             variant="outlined"
                             type="password"
                             label="Password"

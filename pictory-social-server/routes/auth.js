@@ -22,7 +22,7 @@ router.route("/register").get(async function(req, res){
         }
 
 
-        const salt = await bcrypt.genSalt(10)
+    const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
     const newUser = await new User({
         username: req.body.username,
@@ -45,13 +45,13 @@ router.route("/login").get(function(req, res) {res.end("login")}).post(async fun
         const user = await User.findOne({email: req.body.email});
          if(!user)
         {
-            res.status(404).send("User not found")  
+            res.status(401).send("Invalid User credentials")  
             return;
         }
         const validPassword = await bcrypt.compare(req.body.password, user.password)
         if(!validPassword)
         {
-            res.status(400).json("Invalid User credentials")
+            res.status(401).json("Invalid User credentials")
             return;
         }
         res.status(200).json(user)

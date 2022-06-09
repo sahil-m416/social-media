@@ -65,9 +65,9 @@ export default function Post({ post, handleComment, comments }) {
 
     return (
 
-
         // // Using Box here because MUI Container comes with default padding so we have to use disablePadding prop
         // // While working with Box Component, we need not to disablePadding every time
+
         <Box className="post">
             <Box className="postWrapper">
                 <Box className="postTop">

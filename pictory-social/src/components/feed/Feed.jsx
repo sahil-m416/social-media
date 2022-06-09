@@ -19,7 +19,6 @@ export default function Feed() {
 
     useEffect(() => {
         socket.off("newCommentRecieved").on("newCommentRecieved", comment => {
-            console.log("THis is called")
             updateComments(comment)
         })
     }, [])
@@ -80,7 +79,6 @@ export default function Feed() {
                                 <Post handleComment={handleComment} comments={postComments[p._id] || []} key={p._id} post={p} />
                             ))}
                         </Box>
-                        <Loading />
                     </>
                 }
             </Box>

@@ -10,7 +10,16 @@ import {
     Event,
     School,
 } from "@mui/icons-material";
-import { Box, Button, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import {
+    Box,
+    Button,
+    Divider,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Typography
+} from "@mui/material";
 
 
 // LEFTBAR
