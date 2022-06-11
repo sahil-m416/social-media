@@ -86,11 +86,7 @@ io.on('connection', (socket)=>{
     })
 
     socket.on("post", async (newPost) =>{
-      const post = await new Post({
-        userId: newPost.userId,
-        desc: newPost.desc,
-      })
-      io.emit("newPost", post)
+      io.emit("newPost", newPost.data)
     })
 
   socket.on("disconnect", ()=>{

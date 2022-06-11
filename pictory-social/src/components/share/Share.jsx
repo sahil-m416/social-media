@@ -32,8 +32,8 @@ export default function Share() {
             }
         }
         try {
-            await axios.post("/post", newPost)
-            socket.emit("post", newPost)
+            const post = await axios.post("/post", newPost)
+            socket.emit("post", post)
             // if (window.confirm("New post available, want to reload the page ?")) {
             //     window.location.reload()
             // }
