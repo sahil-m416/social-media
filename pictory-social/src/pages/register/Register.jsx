@@ -135,7 +135,7 @@ export default function Register() {
                     alert("Email already registered")
                     return;
                 }
-                navigate("/")
+                navigate("/login")
             } catch (error) {
                 console.log(error)
             }
