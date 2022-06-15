@@ -90,10 +90,10 @@ const MUIAppBar = () => {
         <AppBar position="fixed">
             <Toolbar className={classes.toolbar}>
                 <Typography variant="h6" className={classes.logoLg}>
-                    Lama Dev
+                    Pictory's Social
                 </Typography>
                 <Typography variant="h6" className={classes.logoSm}>
-                    LAMA
+                    Pictory's Social
                 </Typography>
                 <div className={classes.search}>
                     <Search />
@@ -112,8 +112,7 @@ const MUIAppBar = () => {
                         <Notifications />
                     </Badge>
                     <Avatar
-                        alt="Remy Sharp"
-                        src="https://images.pexels.com/photos/8647814/pexels-photo-8647814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="IMAGE RESP"
                     />
                 </div>
             </Toolbar>
