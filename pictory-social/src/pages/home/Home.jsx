@@ -4,8 +4,6 @@ import Feed from '../../components/feed/Feed'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { Grid } from '@mui/material'
-import ResponsiveAppBar from '../../components/AppBar/ResponsiveAppBar'
-import MUIAppBar from '../../components/AppBar/MUIAppBar'
 import SearchComp from '../../components/Search/SearchComp'
 export default function Home() {
     return (
