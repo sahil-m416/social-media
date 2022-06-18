@@ -31,75 +31,75 @@ export default function Sidebar() {
             <Box className="sidebarWrapper">
                 <List className="sidebarList">
 
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <RssFeed className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <RssFeed className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText>
                             <Typography component="span" variant="span" className="sidebarListItemText">Feed</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <Chat className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <Chat className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Chats</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <PlayCircleFilledOutlined className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <PlayCircleFilledOutlined className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Videos</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <Group className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <Group className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Groups</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <Bookmark className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <Bookmark className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Bookmarks</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <HelpOutline className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <HelpOutline className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Questions</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <WorkOutline className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <WorkOutline className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Jobs</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <Event className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <Event className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" className="sidebarListItemText">Events</Typography>
                         </ListItemText>
                     </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemText className="sidebarListItem">
-                            <ListItemIcon>
-                                <School className="sidebarIcon" />
-                            </ListItemIcon>
+                    <ListItem disablePadding className="sidebarListItem">
+                        <ListItemIcon>
+                            <School className="sidebarIcon" />
+                        </ListItemIcon>
+                        <ListItemText >
                             <Typography component="span" variant="span" className="sidebarListItemText">Courses</Typography>
                         </ListItemText>
                     </ListItem>

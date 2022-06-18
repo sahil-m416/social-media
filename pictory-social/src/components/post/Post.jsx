@@ -102,7 +102,7 @@ export default function Post({ post, handleComment, comments }) {
                 <Box className="comments">
 
 
-                    {/* // // These comments are mapped real time from socket */}
+                    {/* // // These comments are mapped real time from socket in order to update each user as fast as possible*/}
                     <Box className="allUsersComments">
                         {
                             comments.map((m) => (

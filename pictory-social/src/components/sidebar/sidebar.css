@@ -30,19 +30,21 @@
 }
 
 .sidebarListItemText {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
 }
 
 
 .sidebarListItem {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    cursor: pointer;
+    margin-bottom: 20px !important;
 }
 
 .sidebarIcon {
     margin-right: 15px;
+    /* padding-bottom: 10px; */
+    cursor: pointer;
 }
 
 
