@@ -11,6 +11,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export default function SearchComp() {
 
 
+    // // This is TopBar of our social Media
+
 
     const { user, dispatch } = useContext(AuthContext)
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
