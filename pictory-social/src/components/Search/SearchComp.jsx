@@ -30,7 +30,7 @@ export default function SearchComp() {
     return (
         <Box className="topbarContainer">
             <Box className="topbarLeft">
-                <Link to="/home" style={{ textDecoration: "none" }}>
+                <Link to="/" style={{ textDecoration: "none" }}>
                     <Typography variant="span" className="logo">Pictory's Social</Typography>
                 </Link>
             </Box>

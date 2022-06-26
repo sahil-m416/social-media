@@ -20,6 +20,7 @@ import {
     ListItemText,
     Typography
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 // LEFTBAR
@@ -31,14 +32,16 @@ export default function Sidebar() {
             <Box className="sidebarWrapper">
                 <List className="sidebarList">
 
-                    <ListItem disablePadding className="sidebarListItem">
-                        <ListItemIcon>
-                            <RssFeed className="sidebarIcon" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography component="span" variant="span" className="sidebarListItemText">Feed</Typography>
-                        </ListItemText>
-                    </ListItem>
+                    <Link to="/misc" style={{ textDecoration: "none" }}>
+                        <ListItem disablePadding className="sidebarListItem">
+                            <ListItemIcon>
+                                <RssFeed className="sidebarIcon" />
+                            </ListItemIcon>
+                            <ListItemText >
+                                <Typography component="span" variant="span" className="sidebarListItemText">Feed</Typography>
+                            </ListItemText>
+                        </ListItem>
+                    </Link>
                     <ListItem disablePadding className="sidebarListItem">
                         <ListItemIcon>
                             <Chat className="sidebarIcon" />
